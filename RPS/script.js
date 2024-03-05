@@ -114,23 +114,41 @@ selecteds.addEventListener('click', function()
 })
 
 // Value Comparision.
-
+let yresult=0, cresult=0;
 function check()
 {
     if(ycheck==ccheck)
     {
-        document.querySelector('#comp').innerHTML="Draw";
-        document.querySelector('#your').innerHTML="Draw";
+        let c = document.querySelector('#comp');
+        let y = document.querySelector('#your');
+        yresult +=0;
+        cresult +=0;
+        c.innerHTML= cresult;
+        c.style.color="black";
+        y.innerHTML= yresult;
+        y.style.color="black";
     }
     
     else if(ycheck=="r" && ccheck=="p" || ycheck=="p" && ccheck=="s" || ycheck=="s" && ccheck=="r")
     {
-        document.querySelector('#comp').innerHTML="Win";
-        document.querySelector('#your').innerHTML="Loose";
+        let c = document.querySelector('#comp');
+        let y = document.querySelector('#your');
+        cresult+=1;
+        yresult+=0;
+        c.innerHTML=cresult;
+        c.style.color = "green"
+        y.innerHTML=yresult;
+        y.style.color="red";
     }
     else
     {
-        document.querySelector('#comp').innerHTML="Loose";
-        document.querySelector('#your').innerHTML="Win";
+        let c = document.querySelector('#comp');
+        let y = document.querySelector('#your');
+        cresult+=0;
+        yresult+=1;
+        c.innerHTML=cresult;
+        c.style.color="red"
+        y.innerHTML=yresult;
+        y.style.color="green";
     }
 }
